@@ -1,11 +1,13 @@
 #vTerrform Setting Block
 terraform {
-  cloud {
-    organization = "hashicrop-learn-jass"
-    workspaces {
-      name = "learn-tfc-aws-jass"
+  backend "remote" {}
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
     }
   }
+}
 
 #   required_providers {
 #     aws = {
@@ -13,7 +15,7 @@ terraform {
 #       version = "~> 4.16"
 
 #     }
-  }
+  
 
 #   required_version = ">= 1.2.0"
 # }
